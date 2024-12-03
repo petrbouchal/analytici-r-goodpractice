@@ -162,7 +162,15 @@ Validace a dokumentace dat: {pointblank}
 
 ### Dokumentace a struktura projektu
 
+- šablona složky
+- log poznatků
+
 ### Základní kontrola kvality
+
+- automatická EDA
+- vizualizace celých datasetů: {visdat}, {naniar}
+- validace: {pointblank}, {data.validator}, {validate}
+- validace kódu: {precommit} + Github Actions
 
 ---
 
