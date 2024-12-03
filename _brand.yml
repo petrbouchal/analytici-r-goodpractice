@@ -1,0 +1,15 @@
+color:
+  palette:
+    blue: "#00f"
+  background: white
+  primary: blue
+typography:
+  fonts:
+    - family: IBM Plex Sans
+      source: bunny
+  base: IBM Plex Sans
+  headings:
+    color: blue
+    family: IBM Plex Sans
+  monospace-block:
+    background-color: "#eef4f8"

@@ -1,0 +1,172 @@
+---
+title: "Dobré praxe práce v R <br> aneb péče o kód, data a lidi"
+subtitle: "Workshop pro analytiky"
+date: 2024-12-03
+date-format: long
+format: 
+  revealjs:
+    mathjax: null
+    center-title-slide: true
+    slide-level: 3
+    progress: false
+    preview-links: true
+    center: true
+    language: cs
+execute:
+  echo: true
+brand: _brand.yml
+editor: source
+lang: cs
+---
+
+```{r, echo=FALSE}
+library(dplyr)
+library(czso)
+library(statnipokladna)
+library(gt)
+```
+
+### Motivace
+
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+  <g>
+    <polygon points="0,20 750,20 750,100 550,100 450,100 0,100" fill="redbrick"/>
+    <polygon points="500,0 550,50 450,50" fill="redbrick"/>
+    <text x="375" y="60" text-anchor="middle" alignment-baseline="middle" fill="white" font-size="24">Na mým počítači to fungovalo.</text>
+  </g>
+  <g>
+    <polygon points="800,140 50,140 50,220 250,220 300,270 350,220 800,220" fill="blue"/>
+    <text x="425" y="180" text-anchor="middle" alignment-baseline="middle" fill="white" font-size="24">Mám tam trochu jiný výsledky, nevíš proč?</text>
+  </g>
+  <g>
+    <polygon points="400,260 1150,260 1150,340 950,340 850,340 400,340" fill="green"/>
+    <polygon points="900,210 950,260 850,260" fill="green"/>
+    <text x="775" y="300" text-anchor="middle" alignment-baseline="middle" fill="white" font-size="24">Pošleš mi ten skript? Na WhatsApp prosím.</text>
+  </g>
+  <g>
+    <polygon points="0,380 750,380 750,460 550,460 0,460" fill="brown"/>
+    <polygon points="750,420 800,440 750,460" fill="brown"/>
+    <text x="375" y="420" text-anchor="middle" alignment-baseline="middle" fill="white" font-size="24">Hele, a co musím pustit znova, aby se mi to aktualizovalo?</text>
+  </g>
+  <g>
+    <polygon points="800,500 50,500 50,580 250,580 300,630 350,580 800,580" fill="purple"/>
+    <text x="425" y="540" text-anchor="middle" alignment-baseline="middle" fill="white" font-size="24">Vrchní se ptá, odkud se vzalo tohle číslo. Napiš mi to ASAP.</text>
+  </g>
+</svg>
+
+## O co nám jde
+
+- šetřit nervy: svoje za rok, kolegyni zítra
+- ušetřit si překvapení a smutek
+- neudřít se k smrti
+- moct se soustředit na přemýšlení, ne na luštění
+- mít jistotu, důvěru, důvěryhodnost
+- mírové a produktivní spolužití s Pythonem, Linuxem...
+
+## Cíle na dnešek
+
+- představit minimální dobré praxe
+- ukázat několik nástrojů na řešení dalších problémů
+- menu řešení pro různé bolístky práce s kódem
+
+## Orientační schéma
+
+### Úrovně práce x typy problémů
+
+| | Projekt | Analytický proces | Kód (skript) | Data | Práce v čas a s lidmi |
+|----------:|:----------:|:----------:|:----------:|:----------:|
+| **Organizace**    |          |          |          |          |
+| **Dokumentace**    |          |          |          |          |
+| **Zajištění kvality**    |          |          |          |          |
+| **Bezpečnost**    |          |          |          |          |
+
+### S čím se dá pracovat
+
+- standard / pravidlo
+- proces
+- nástroj
+
+### Na co myslet
+
+> Co zůstane vs. co je dočasné??
+
+Kód: zůstane, ale musí být ve skriptu
+
+Data: zůstanou, ale musí být na správném místě
+
+PNG? PDF? Výstupní CSV?
+
+`df_new3` v záložce Environment?
+
+## Základní dobré praxe
+
+### Projektové workflow
+
+- `.Rproj` soubor
+- celý (!) projekt v jednom adresáři
+- složky na data, vstupy, výstupy
+
+### Nastavení RStudia
+
+- ⬜ Restore .Rdata
+- Save workspace to .Rdata on exit: [Never]
+- code snippets
+- Cmd/Ctrl + I
+- "Reformat current selection"
+- Build script
+
+### Návyky
+
+- restartuj R, často
+- restartuj a pusť si celý skript
+- nepoužívej `setwd()`, toto by měla zařídit struktura projektu
+- nesahej do dat ručně
+- funkce
+- {usethis}
+
+### Základní šablony
+
+- README.md
+- šablona projektové složky
+- názvy souborů
+- názvy proměnných
+- datumy, už od roku 1492-10-12
+
+### Zpřehledňovací nástroje
+
+- utils.R apod.
+- oddíly v R scriptu
+- {config}
+- README.md
+- CHANGELOG / NEWS.md
+- DESCRIPTION
+- build script
+
+## Pokročilejší
+
+---
+
+{renv}
+
+Git + Github/Gitlab (code.gov.cz)
+
+Funkční workflow: {targets}
+
+Validace a dokumentace dat: {pointblank}
+
+{arrow} + parquet soubory
+
+## Další
+
+### Dokumentace a struktura projektu
+
+### Základní kontrola kvality
+
+---
+
+------------------------------------------------------------------------
+
+# Jak to děláte vy?
+
+[petr.bouchal\@vlada.gov.cz](mailto:petr.bouchal@vlada.gov.cz){.email}
