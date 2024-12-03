@@ -60,7 +60,8 @@ library(gt)
 - šetřit nervy: svoje za rok, kolegyni zítra
 - ušetřit si překvapení a smutek
 - neudřít se k smrti
-- moct se soustředit na přemýšlení, ne na luštění
+- moct se soustředit na přemýšlení, ne na luštění a archeologie
+
 - mít jistotu, důvěru, důvěryhodnost
 - mírové a produktivní spolužití s Pythonem, Linuxem...
 
