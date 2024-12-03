@@ -1,0 +1,63 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r setup}
+library(ggplot2)
+library(targets)
+library(pointblank)
+```
+
+## Hello plot
+
+```{r}
+tar_read(plot)
+```
+
+## Validace
+
+```{r}
+targets::tar_load(data1)
+```
+
+
+```{r}
+# Define an agent and add a validation step to check if values in column1 are in the set
+agent <- 
+  create_agent(tbl = data1) %>%
+  col_vals_in_set(
+    columns = vars(group),
+    set = c("A", "B", "C")
+  ) %>%
+  interrogate()
+
+# View the agent report
+```
+
+## Codebook
+
+```{r}
+agent
+```
+
+```{r}
+informant <- 
+  create_informant(
+    tbl = data1,
+    tbl_name = "small_table",
+    label = "Example No. 1"
+  ) |> 
+  info_columns("group",
+               `ℹ️` = "Skupina - hodnoty {group_snippet}.") |> 
+  info_snippet(
+    snippet_name = "group_snippet",
+    fn = snip_list(column = "group")
+  ) %>%
+  incorporate()
+```
+
+```{r}
+informant
+```
+
