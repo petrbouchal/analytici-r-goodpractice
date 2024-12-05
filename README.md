@@ -18,3 +18,12 @@ Co tu je a kde
 - {targets}
 - {renv}
 - {pointblank}
+
+## Další příbuzná témata a problémy
+
+viz [soupis zdrojů a nástrojů](more.html)
+
+## Další zdroje
+
+
+
