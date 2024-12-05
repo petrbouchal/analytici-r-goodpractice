@@ -17,4 +17,4 @@ StripTrailingWhitespace: Yes
 LineEndingConversion: Posix
 
 BuildType: Custom
-CustomScriptPath: build.sh
+CustomScriptPath: make.R
